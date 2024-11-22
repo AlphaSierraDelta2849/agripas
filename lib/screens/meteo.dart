@@ -1,4 +1,5 @@
 import 'package:agripas/screens/map.dart';
+import 'package:agripas/screens/weatherTable.dart';
 import 'package:agripas/screens/webMap.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,8 @@ class MeteoPage extends StatelessWidget {
               //   style: TextStyle(fontSize: 12),
               //   textAlign: TextAlign.center,
               // ),
-              SenegalMapPage()
+              // SenegalMapPage(),
+              WeatherTablePage()
               // Ajoutez des informations météo dynamiques ici
             ],
           ),

@@ -40,7 +40,7 @@ class _SenegalMapPageState extends State<SenegalMapPage> {
     setState(() {
       _loading = true;
     });
-    const apiKey = "c0b090c6ec6fbaa45234fa8eaf267ca2";
+    const apiKey = "28bf1f2dac242dc42bc80f3bebc3a2b2";
     // "317f998d51adb0d6c94b654ef1df5351";
     // Exemple : appel à une API (remplacez par l'API réelle)
     final apiUrl =
