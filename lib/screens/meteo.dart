@@ -29,8 +29,8 @@ class MeteoPage extends StatelessWidget {
               //   style: TextStyle(fontSize: 12),
               //   textAlign: TextAlign.center,
               // ),
-              // SenegalMapPage(),
-              WeatherTablePage()
+              SenegalMapPage(),
+              // WeatherTablePage()
               // Ajoutez des informations météo dynamiques ici
             ],
           ),

@@ -19,28 +19,7 @@ class _WeatherTablePageState extends State<WeatherTablePage> {
   void initState() {
     super.initState();
     fetchWeatherData();
-    // final localservice = Localisation();
-    // localservice.getCurrentLocation().then((position) async {
-    //   final service = WeatherService();
-    //   print(position);
-    //   service.fetchWeatherData(position.latitude, position.longitude).then((data) {
-    //     setState(() {
-    //       isLoading = false;
-    //       weatherData = data;
-    //     });
-    //   }).catchError((e) {
-    //     setState(() {
-    //       isLoading = false;
-    //     });
-    //     print("Error fetching weather: $e");
-    //   });
-    // }).catchError((e) {
-    //   setState(() {
-    //     isLoading = false;
-    //   });
-    //   print("Error fetching location: $e");
-    // });
-  }
+    }
  Future<void> fetchWeatherData() async {
     try {
       // Step 1: Get location
@@ -73,22 +52,7 @@ class _WeatherTablePageState extends State<WeatherTablePage> {
     }
   }
 
-  // Future<void> fetchWeather() async {
-  //   try {
-  //     final service = WeatherService();
-  //     final data = await service.fetchWeatherData(14.4974, -14.4524); // Latitude/Longitude for Senegal
-  //     setState(() {
-  //       weatherData = data;
-  //       isLoading = false;
-  //     });
-  //   } catch (e) {
-  //     print(e);
-  //     setState(() {
-  //       isLoading = false;
-  //     });
-  //   }
-  // }
-
+  
   @override
   Widget build(BuildContext context) {
     return 

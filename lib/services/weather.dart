@@ -16,14 +16,16 @@ class WeatherService {
         final data = json.decode(response.body);
         final List<Map<String, dynamic>> hourlyWeather = [];
         // print(data['list']);
+        print(data[0]['wind']['speed']);
         for (var item in data) {
           hourlyWeather.add({
-            "time": DateTime.fromMillisecondsSinceEpoch(item['dt'] * 1000),
+            "time": item['dt'],
             "condition": item['weather'][0]['description'],
             "temperature": "${item['main']['temp']}°C",
             "humidity": "${item['main']['humidity']}%",
             "pressure": "${item['main']['pressure']} hPa",
             "wind_speed": "${item['wind']['speed']} m/s",
+            "icon":"${item["weather"][0]["icon"]}",
             "rain": item['rain']?['3h']?.toString() ?? "0.0 mm",
           });
         }
