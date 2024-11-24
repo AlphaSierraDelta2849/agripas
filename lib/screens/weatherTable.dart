@@ -1,5 +1,7 @@
+import 'package:agripas/services/localisation.dart';
 import 'package:agripas/services/weather.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 class WeatherTablePage extends StatefulWidget {
   @override
   _WeatherTablePageState createState() => _WeatherTablePageState();
@@ -8,28 +10,84 @@ class WeatherTablePage extends StatefulWidget {
 class _WeatherTablePageState extends State<WeatherTablePage> {
   List<Map<String, dynamic>> weatherData = [];
   bool isLoading = true;
+  final LocationPermissionService _locationService = LocationPermissionService();
+  String errorMessage = "";
+
+
 
   @override
   void initState() {
     super.initState();
-    fetchWeather();
+    fetchWeatherData();
+    // final localservice = Localisation();
+    // localservice.getCurrentLocation().then((position) async {
+    //   final service = WeatherService();
+    //   print(position);
+    //   service.fetchWeatherData(position.latitude, position.longitude).then((data) {
+    //     setState(() {
+    //       isLoading = false;
+    //       weatherData = data;
+    //     });
+    //   }).catchError((e) {
+    //     setState(() {
+    //       isLoading = false;
+    //     });
+    //     print("Error fetching weather: $e");
+    //   });
+    // }).catchError((e) {
+    //   setState(() {
+    //     isLoading = false;
+    //   });
+    //   print("Error fetching location: $e");
+    // });
   }
-
-  Future<void> fetchWeather() async {
+ Future<void> fetchWeatherData() async {
     try {
+      // Step 1: Get location
+      Position? position = await _locationService.fetchLocation();
+      if (position == null) {
+        setState(() {
+          errorMessage = "Unable to fetch location.";
+          isLoading = false;
+        });
+        return;
+      }
+
+      double latitude = position.latitude;
+      double longitude = position.longitude;
+
+      // Step 2: Fetch weather data using the location
+      // Replace this with your weather API fetching logic
       final service = WeatherService();
-      final data = await service.fetchWeatherData(14.4974, -14.4524); // Latitude/Longitude for Senegal
+      var weatherApiData = await service.fetchWeatherData(position.latitude, position.longitude);
+
       setState(() {
-        weatherData = data;
+        weatherData = weatherApiData;
         isLoading = false;
       });
     } catch (e) {
-      print(e);
       setState(() {
+        errorMessage = "Error: $e";
         isLoading = false;
       });
     }
   }
+
+  // Future<void> fetchWeather() async {
+  //   try {
+  //     final service = WeatherService();
+  //     final data = await service.fetchWeatherData(14.4974, -14.4524); // Latitude/Longitude for Senegal
+  //     setState(() {
+  //       weatherData = data;
+  //       isLoading = false;
+  //     });
+  //   } catch (e) {
+  //     print(e);
+  //     setState(() {
+  //       isLoading = false;
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
