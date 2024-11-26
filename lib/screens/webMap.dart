@@ -16,7 +16,6 @@ class SenegalMapPage extends StatefulWidget {
 }
 
 class _SenegalMapPageState extends State<SenegalMapPage> {
-  LatLng _selectedLocation = LatLng(14.4974, -14.4524); // Default to Senegal
   List<Map<String, dynamic>> _weatherData = [];
   bool isLoading = true;
   final LocationPermissionService _locationService = LocationPermissionService();
@@ -53,7 +52,8 @@ Future<void> fetchWeatherData() async {
       if (position == null) {
         setState(() {
           errorMessage = "Unable to fetch location.";
-          isLoading = false;
+          print(errorMessage);
+          // isLoading = false;
         });
         return;
       }
@@ -68,13 +68,14 @@ Future<void> fetchWeatherData() async {
 
       setState(() {
         _weatherData = weatherApiData;
-        print(_weatherData[0]);
+        print(_weatherData);
         isLoading = false;
       });
     } catch (e) {
       setState(() {
         errorMessage = "Error: $e";
-        isLoading = false;
+        print(e);
+        // isLoading = false;
       });
     }
   }
@@ -117,7 +118,7 @@ Future<void> fetchWeatherData() async {
       // width: 400,
       // height: 500,
     child:isLoading
-      ? Center(child: CircularProgressIndicator()):
+      ? const Center(child: CircularProgressIndicator()):
       Column(
         children: [
           // Weather Info Section
