@@ -40,6 +40,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   http: ^0.13.6
   intl: ^0.18.0
+  carousel_slider: ^5.0.0
+  percent_indicator: ^4.2.2
+  # flutter_swiper_view: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +60,29 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+      - assets/images/champs.jpg
+      - assets/images/soleil.png
+      - assets/images/il-pleut.png
+      - assets/images/alerte.png
+      - assets/images/coccinelle.png
+      - assets/images/plante.png
+      - assets/images/arrosagee.png
+      - assets/images/street-markett.png
+      - assets/images/page-daccueil.png
+      - assets/images/plantee.png
+      - assets/images/irrigation.png
+      - assets/images/chatbot.png
+      - assets/images/street-market-blue.png
+      - assets/images/onboarding1.jpg 
+      - assets/images/onboarding2.jpg 
+      - assets/images/onboarding3.jpg 
+      - assets/images/tasty-organic-tomatoes-hidden-green-leaves.jpg
+      - assets/images/close-up-texture-carrots.jpg
+      - assets/images/arrangement-nutritious-cassava-roots.jpg
+      - assets/images/fertilation.png
+      - assets/images/meteo.png
+      - assets/images/irrigation2.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

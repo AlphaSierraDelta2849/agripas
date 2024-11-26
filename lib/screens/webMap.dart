@@ -23,9 +23,7 @@ class _SenegalMapPageState extends State<SenegalMapPage> {
   int cnt=0;
   changeJour(){
     setState(() {
-      // cnt<10?cnt++:cnt=0;
       cnt++;
-      // _weatherData = data;
     });
     
   }
@@ -53,7 +51,7 @@ Future<void> fetchWeatherData() async {
         setState(() {
           errorMessage = "Unable to fetch location.";
           print(errorMessage);
-          // isLoading = false;
+          isLoading = false;
         });
         return;
       }
@@ -126,7 +124,7 @@ Future<void> fetchWeatherData() async {
               margin: EdgeInsets.all(10),
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppColors.background,
+                color: AppColors.blue,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
