@@ -30,7 +30,7 @@ class MenuWidget extends StatelessWidget {
             context,
             iconPath: 'assets/images/irrigation.png',
             label: 'Irrigation',
-            onTap: () => Navigator.pushNamed(context, '/irrigation'),
+            onTap: () => Navigator.pushNamed(context, '/irrigations'),
           ),
           _buildMenuItem(
             context,

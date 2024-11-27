@@ -19,14 +19,14 @@ class WeatherService {
         print(data[0]['wind']['speed']);
         for (var item in data) {
           hourlyWeather.add({
-            "time": item['dt'],
+            "time": DateTime.fromMillisecondsSinceEpoch(item['dt'] * 1000),
             "condition": item['weather'][0]['description'],
-            "temperature": "${item['main']['temp']}°C",
-            "humidity": "${item['main']['humidity']}%",
-            "pressure": "${item['main']['pressure']} hPa",
-            "wind_speed": "${item['wind']['speed']} m/s",
-            "icon":"${item["weather"][0]["icon"]}",
-            "rain": item['rain']?['3h']?.toString() ?? "0.0 mm",
+            "temperature": item['main']['temp'],
+            "humidity": item['main']['humidity'],
+            "pressure": item['main']['pressure'],
+            "wind_speed": item['wind']['speed'],
+            "rain": item['rain']?['3h'] ?? 0.0, // Précipitations sur 3 heures
+            "icon":"${item["weather"][0]["icon"]}"
           });
         }
 

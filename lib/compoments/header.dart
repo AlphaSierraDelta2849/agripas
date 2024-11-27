@@ -75,7 +75,7 @@ class HeaderWidget extends StatelessWidget {
         // Image avec champ de recherche
         Container(
           width: double.infinity,
-          height: 200,
+          height: 100,
           decoration: BoxDecoration(
             color: AppColors.blue,
             image: const DecorationImage(
