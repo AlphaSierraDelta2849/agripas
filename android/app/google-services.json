@@ -1,0 +1,206 @@
+{
+  "project_info": {
+    "project_number": "468307143948",
+    "project_id": "yonima-8b9af",
+    "storage_bucket": "yonima-8b9af.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468307143948:android:041a8710669187f32c2d29",
+        "android_client_info": {
+          "package_name": "com.agripas.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6SYwaogNfyzUaWCQYRFPGMDAfecYnVSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468307143948-0ilj0eqi7oi7fdeae93m9smo8ui2u8qu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.yobalema"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468307143948:android:7d651e167d3145892c2d29",
+        "android_client_info": {
+          "package_name": "com.example.ecom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468307143948-7345045hsife1b1lrdk71n3j4fj547h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecom",
+            "certificate_hash": "6ef3d65cba927e92748eae19398bb554bd4bfb24"
+          }
+        },
+        {
+          "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6SYwaogNfyzUaWCQYRFPGMDAfecYnVSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468307143948-0ilj0eqi7oi7fdeae93m9smo8ui2u8qu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.yobalema"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468307143948:android:683908b3f2ea46fb2c2d29",
+        "android_client_info": {
+          "package_name": "com.example.recipe_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6SYwaogNfyzUaWCQYRFPGMDAfecYnVSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468307143948-0ilj0eqi7oi7fdeae93m9smo8ui2u8qu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.yobalema"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468307143948:android:9a131d0c55d755ca2c2d29",
+        "android_client_info": {
+          "package_name": "com.example.yobalema"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468307143948-2grrmhu807dhmcqs9r64868n9jtsvbt1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yobalema",
+            "certificate_hash": "44f9e8335c101dfdeae8e58e411e740d6e3571d8"
+          }
+        },
+        {
+          "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6SYwaogNfyzUaWCQYRFPGMDAfecYnVSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468307143948-0ilj0eqi7oi7fdeae93m9smo8ui2u8qu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.yobalema"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468307143948:android:a0db2bafe5864bbf2c2d29",
+        "android_client_info": {
+          "package_name": "com.pointage.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6SYwaogNfyzUaWCQYRFPGMDAfecYnVSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468307143948-7asacqfd6t6pks2v22l418jpekl632pp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468307143948-0ilj0eqi7oi7fdeae93m9smo8ui2u8qu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.yobalema"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

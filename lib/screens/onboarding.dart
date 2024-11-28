@@ -1,3 +1,4 @@
+import 'package:agripas/services/authService.dart';
 import 'package:flutter/material.dart';
 import '../utils/colors.dart'; // Import des couleurs
 
@@ -11,15 +12,21 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
-
+  final authService = AuthService();
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
 
-  void _goToHome() {
+  Future<void> endBoarding() async {
+    String? userToken =await authService.getToken();
+    if(userToken != null){
     Navigator.pushReplacementNamed(context, '/home'); // Redirection vers Home via route
+    }
+    else{
+      Navigator.pushReplacementNamed(context, '/signup');
+    }
   }
 
   @override
@@ -90,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
                 onPressed: _currentPage == onboardingPages.length - 1
-                    ? _goToHome // Redirection vers Home
+                    ? endBoarding // Redirection vers Home
                     : () {
                         // Aller à la page suivante
                         _pageController.nextPage(
