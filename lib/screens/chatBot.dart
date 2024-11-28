@@ -19,7 +19,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final Map<String, String> salutations = {'text':'Salut, Je suis Macodou. Comment Je pourrais vous aider?'};
+  final Map<String, String> salutations = {'sender':'bot','text':'Salut, Je suis Macodou. Comment Je pourrais vous aider?'};
   final List<Map<String, String>> messages = []; // Stocke les messages
   final TextEditingController _controller = TextEditingController();
 
@@ -32,11 +32,12 @@ class _ChatScreenState extends State<ChatScreen> {
   _sendMessage(String text) async {
     final chatbotService = ChatbotService();
     final response = await chatbotService.sendMessage(text);
+    _controller.clear();
     setState(() {
-      messages.add({'sender': 'bot','message':response});
+      messages.add({'sender': 'user','text':text});
+      messages.add({'sender': 'bot','text':response});
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
