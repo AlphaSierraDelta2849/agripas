@@ -13,7 +13,7 @@ class HeaderWidget extends StatelessWidget {
           width: double.infinity,
           height: 80,
           decoration: BoxDecoration(
-            color: AppColors.blue,
+            color: Colors.green,
             boxShadow: const [
               BoxShadow(
                 blurRadius: 4,
