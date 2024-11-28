@@ -21,16 +21,12 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     fetchWeather(); 
   }
-void translate(message){
-  Intl.withLocale('fr', () => print(message()));
 
-}
   Future<void> fetchWeather() async {
     try {
       final data = await _weatherService.fetchWeatherData(14.6928, -17.4467); 
       setState(() {
-        weatherData = data.isNotEmpty ? data[0] : null;
-        print(weatherData);
+        weatherData = data.isNotEmpty ? data[4] : null;
         isLoading = false;
       });
     } catch (e) {

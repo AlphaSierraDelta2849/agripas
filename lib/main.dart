@@ -1,3 +1,4 @@
+import 'package:agripas/screens/chatBot.dart';
 import 'package:agripas/screens/irrigations.dart';
 import 'package:flutter/material.dart';
 import 'screens/home.dart'; // Import de la page d'accueil
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomePage(), // Route vers la page Home
         '/conseilAgricole': (context) => const ConseilAgricolePage(), // Route vers la page Conseil Agricole
         '/irrigations': (context) => const IrrigationPage(),
+        '/chat': (context) => ChatBotApp(),
       },
     );
   }
