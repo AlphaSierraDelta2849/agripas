@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:agripas/services/chatbotService.dart';
+import 'package:agripas/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -42,7 +43,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFB7D76A),
+        backgroundColor: AppColors.green,
         title: Text('Assistant Agricole'),
         centerTitle: true,
       ),
@@ -64,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     padding: EdgeInsets.all(12),
                     constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
                     decoration: BoxDecoration(
-                      color: isUser ? Color(0xFFB7D76A) : Color(0xFFE0E0E0),
+                      color: isUser ? AppColors.blue : Color(0xFFE0E0E0),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(

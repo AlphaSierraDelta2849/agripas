@@ -25,7 +25,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Navigator.pushReplacementNamed(context, '/home'); // Redirection vers Home via route
     }
     else{
-      Navigator.pushReplacementNamed(context, '/signup');
+      Navigator.pushReplacementNamed(context, '/home');
+      // Navigator.pushReplacementNamed(context, '/signup');
     }
   }
 

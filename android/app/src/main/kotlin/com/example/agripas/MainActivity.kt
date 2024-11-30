@@ -1,4 +1,4 @@
-package com.example.agripas
+package com.agripas.app
 
 import io.flutter.embedding.android.FlutterActivity
 
