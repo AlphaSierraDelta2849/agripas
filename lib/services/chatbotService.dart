@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ChatbotService {
-  final String apiUrl='https://4299-41-82-207-174.ngrok-free.app/webhooks/rest/webhook';
+  final String apiUrl =
+      'https://70fc-154-124-163-251.ngrok-free.app/webhooks/rest/webhook';
 
   // Constructeur pour initialiser l'URL de l'API
 
@@ -17,7 +18,13 @@ class ChatbotService {
       if (response.statusCode == 200) {
         // Parse et renvoie la réponse du chatbot
         final responseData = jsonDecode(response.body);
-        return responseData[0]['text'] ?? "Aucune réponse reçue.";
+        String text = '';
+        for (var response in responseData){
+          print('response: ' + response['text']);
+          text += response['text'];
+        }
+
+        return text ?? "Aucune réponse reçue.";
       } else {
         return "Erreur serveur : ${response.statusCode}.";
       }
