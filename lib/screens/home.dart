@@ -1,9 +1,11 @@
 import 'package:agripas/screens/forum.dart';
+import 'package:agripas/widgets/previsions.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:agripas/services/weather.dart';
 import 'package:agripas/compoments/menu.dart';
 import 'package:agripas/screens/diagnostic.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,20 +26,29 @@ class _HomePageState extends State<HomePage> {
     _fetchWeatherData();
   }
 
-  Future<void> _fetchWeatherData() async {
-    try {
-      final data = await weatherService.fetchWeatherData(14.6928, -17.4467); // Dakar
-      setState(() {
-        weatherData = data;
-        isLoading = false;
-      });
-    } catch (e) {
-      setState(() {
-        errorMessage = 'Erreur lors de la récupération des données météo : $e';
-        isLoading = false;
-      });
-    }
+  @override
+void dispose() {
+  super.dispose();
+}
+
+
+Future<void> _fetchWeatherData() async {
+  try {
+    final data = await weatherService.fetchWeatherData(14.6928, -17.4467); // Dakar
+    if (!mounted) return; // Vérifiez si le widget est toujours monté
+    setState(() {
+      weatherData = data;
+      isLoading = false;
+    });
+  } catch (e) {
+    if (!mounted) return; // Vérifiez si le widget est toujours monté
+    setState(() {
+      errorMessage = 'Erreur lors de la récupération des données météo : $e';
+      isLoading = false;
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +74,14 @@ class _HomePageState extends State<HomePage> {
                               _buildHeaderWithIcons(context),
                               _buildWeatherForecastSection(),
                               const SizedBox(height: 16),
+                              Center(child:Text(style:TextStyle(
+                                fontSize: 16,
+                                fontWeight:FontWeight.bold
+                              ),
+                              'Prévisions')),
+                              const WeatherForecast(),
+                              const SizedBox(height: 8),
+
                               _buildAlertsAndNotificationsSection(),
                             ],
                           ),

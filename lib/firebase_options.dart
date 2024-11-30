@@ -21,13 +21,25 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -41,50 +53,12 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD1olKL99I_mV7pbmldR2nF4k8WkD_v8XU',
-    appId: '1:468307143948:web:5ef3b0a309fe123b2c2d29',
-    messagingSenderId: '468307143948',
-    projectId: 'yonima-8b9af',
-    authDomain: 'yonima-8b9af.firebaseapp.com',
-    storageBucket: 'yonima-8b9af.firebasestorage.app',
-    measurementId: 'G-2JHG0FQ79X',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB6SYwaogNfyzUaWCQYRFPGMDAfecYnVSc',
-    appId: '1:468307143948:android:041a8710669187f32c2d29',
-    messagingSenderId: '468307143948',
-    projectId: 'yonima-8b9af',
-    storageBucket: 'yonima-8b9af.firebasestorage.app',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBZm356wknKeJCBv2aCkfcKK4Q8cvybY5A',
-    appId: '1:468307143948:ios:1f33303661dfa0422c2d29',
-    messagingSenderId: '468307143948',
-    projectId: 'yonima-8b9af',
-    storageBucket: 'yonima-8b9af.firebasestorage.app',
-    androidClientId: '468307143948-2grrmhu807dhmcqs9r64868n9jtsvbt1.apps.googleusercontent.com',
-    iosBundleId: 'com.agripas.app',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBZm356wknKeJCBv2aCkfcKK4Q8cvybY5A',
-    appId: '1:468307143948:ios:1f33303661dfa0422c2d29',
-    messagingSenderId: '468307143948',
-    projectId: 'yonima-8b9af',
-    storageBucket: 'yonima-8b9af.firebasestorage.app',
-    androidClientId: '468307143948-2grrmhu807dhmcqs9r64868n9jtsvbt1.apps.googleusercontent.com',
-    iosBundleId: 'com.agripas.app',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAog3aTLcwIUZnfJpT9Tz8vnwL9KXG1Lsw',
-    appId: '1:468307143948:web:ee8d3e04a0d7b74e2c2d29',
-    messagingSenderId: '468307143948',
-    projectId: 'yonima-8b9af',
-    authDomain: 'yonima-8b9af.firebaseapp.com',
-    storageBucket: 'yonima-8b9af.firebasestorage.app',
-    measurementId: 'G-H4Z99WG0MP',
+    apiKey: 'AIzaSyBzz9M62cHu4zjARTFM824sqaC6PCBgOl8',
+    appId: '1:903050467548:web:43fb05b17c1347d57afc19',
+    messagingSenderId: '903050467548',
+    projectId: 'agripas-3c752',
+    authDomain: 'agripas-3c752.firebaseapp.com',
+    storageBucket: 'agripas-3c752.firebasestorage.app',
+    measurementId: 'G-97Q090KQS3',
   );
 }

@@ -40,7 +40,7 @@ class MenuWidget extends StatelessWidget {
             context,
             icon: FontAwesomeIcons.store,
             label: 'Marché',
-            onTap: () => Navigator.pushNamed(context, '/marche'),
+            onTap: () => Navigator.pushNamed(context, '/market'),
           ),
           _buildMenuItem(
             context,

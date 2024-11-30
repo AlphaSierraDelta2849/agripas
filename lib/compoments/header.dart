@@ -1,14 +1,83 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:agripas/utils/colors.dart';
-
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({Key? key}) : super(key: key);
 
+  Future<void> _logout(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.signOut(); // Déconnexion Firebase
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        '/auth', // Redirige vers la page d'authentification
+        (route) => false,
+      );
+    } catch (e) {
+      // Afficher un message d'erreur si la déconnexion échoue
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Erreur lors de la déconnexion : $e")),
+      );
+    }
+  }
+
+  void _showUserMenu(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Mon Profil",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.close),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+              const Divider(),
+              if (user != null)
+                ListTile(
+                  leading: const Icon(Icons.person, color: Colors.green),
+                  title: Text(user.displayName ?? "Nom d'utilisateur"),
+                  subtitle: Text(user.email ?? "Email non disponible"),
+                ),
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.logout, color: Colors.red),
+                title: const Text("Déconnexion"),
+                onTap: () {
+                  Navigator.pop(context); // Fermer le menu modal
+                  _logout(context); // Déconnexion
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
     return Column(
       children: [
+        // En-tête principal
         Container(
           width: double.infinity,
           height: 80,
@@ -27,7 +96,7 @@ class HeaderWidget extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.arrow_back, color: AppColors.white),
                 onPressed: () {
-                  Navigator.pop(context); 
+                  Navigator.pop(context);
                 },
               ),
               const SizedBox(width: 8),
@@ -45,7 +114,7 @@ class HeaderWidget extends StatelessWidget {
                         elevation: 0,
                       ),
                       onPressed: () {
-                        print("Forum button pressed");
+                        Navigator.pushNamed(context, '/forum');
                       },
                       icon: const Icon(Icons.forum_outlined, size: 24, color: AppColors.white),
                       label: const Text(
@@ -60,10 +129,16 @@ class HeaderWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 16),
                     // Icône de profil
-                    CircleAvatar(
-                      backgroundColor: AppColors.white,
-                      radius: 22,
-                      child: const Icon(Icons.person, color: AppColors.blue),
+                    GestureDetector(
+                      onTap: () => _showUserMenu(context),
+                      child: CircleAvatar(
+                        backgroundColor: AppColors.white,
+                        radius: 22,
+                        child: Text(
+                          user?.displayName?[0].toUpperCase() ?? "?",
+                          style: const TextStyle(color: AppColors.blue, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ],
                 ),
