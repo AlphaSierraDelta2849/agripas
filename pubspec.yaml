@@ -45,6 +45,9 @@ dependencies:
   font_awesome_flutter: ^9.0.0
   image_picker_for_web: ^3.0.6
   image_picker: ^1.1.2
+  firebase_core: ^3.8.0
+  cloud_firestore: ^5.5.0
+  firebase_auth: ^5.3.3
 
 dev_dependencies:
   flutter_test:
@@ -64,27 +67,8 @@ dev_dependencies:
 flutter:
   assets:
       - assets/images/champs.jpg
-      - assets/images/soleil.png
-      - assets/images/il-pleut.png
-      - assets/images/alerte.png
-      - assets/images/coccinelle.png
-      - assets/images/plante.png
-      - assets/images/arrosagee.png
-      - assets/images/street-markett.png
-      - assets/images/page-daccueil.png
-      - assets/images/plantee.png
-      - assets/images/irrigation.png
-      - assets/images/chatbot.png
-      - assets/images/street-market-blue.png
-      - assets/images/onboarding1.jpg 
-      - assets/images/onboarding2.jpg 
-      - assets/images/onboarding3.jpg 
-      - assets/images/tasty-organic-tomatoes-hidden-green-leaves.jpg
-      - assets/images/close-up-texture-carrots.jpg
-      - assets/images/arrangement-nutritious-cassava-roots.jpg
-      - assets/images/fertilation.png
-      - assets/images/meteo.png
-      - assets/images/irrigation2.png
+      - assets/images/logo.png
+      
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

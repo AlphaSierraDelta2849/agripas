@@ -5,6 +5,7 @@ import 'package:agripas/services/weather.dart';
 import 'package:agripas/compoments/menu.dart';
 import 'package:agripas/screens/diagnostic.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -24,20 +25,29 @@ class _HomePageState extends State<HomePage> {
     _fetchWeatherData();
   }
 
-  Future<void> _fetchWeatherData() async {
-    try {
-      final data = await weatherService.fetchWeatherData(14.6928, -17.4467); // Dakar
-      setState(() {
-        weatherData = data;
-        isLoading = false;
-      });
-    } catch (e) {
-      setState(() {
-        errorMessage = 'Erreur lors de la récupération des données météo : $e';
-        isLoading = false;
-      });
-    }
+  @override
+void dispose() {
+  super.dispose();
+}
+
+
+Future<void> _fetchWeatherData() async {
+  try {
+    final data = await weatherService.fetchWeatherData(14.6928, -17.4467); // Dakar
+    if (!mounted) return; // Vérifiez si le widget est toujours monté
+    setState(() {
+      weatherData = data;
+      isLoading = false;
+    });
+  } catch (e) {
+    if (!mounted) return; // Vérifiez si le widget est toujours monté
+    setState(() {
+      errorMessage = 'Erreur lors de la récupération des données météo : $e';
+      isLoading = false;
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
