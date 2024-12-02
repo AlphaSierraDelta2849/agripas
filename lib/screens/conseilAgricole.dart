@@ -22,15 +22,15 @@ class _ConseilAgricolePageState extends State<ConseilAgricolePage> {
   final List<Map<String, String>> cultures = [
     {
       "name": "Tomates",
-      "image": "assets/images/tasty-organic-tomatoes-hidden-green-leaves.jpg",
+      "image": "assets/images/tomate.jpg",
     },
     {
       "name": "Carottes",
-      "image": "assets/images/close-up-texture-carrots.jpg",
+      "image": "assets/images/carotte.jpg",
     },
     {
       "name": "Manioc",
-      "image": "assets/images/arrangement-nutritious-cassava-roots.jpg",
+      "image": "assets/images/manioc.jpg",
     },
   ];
 

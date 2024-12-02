@@ -235,7 +235,7 @@ class _MarketPageState extends State<MarketPage> {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               "${product['price']} FCFA",
-              style: const TextStyle(color: Colors.green, fontSize: 16),
+              style: const TextStyle(color: const Color(0xFF60A917), fontSize: 16),
             ),
           ),
           Padding(
@@ -267,7 +267,7 @@ class _MarketPageState extends State<MarketPage> {
                       _addToCart(product, quantity);
                     }
                   },
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700), 
+                  style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF60A917)), 
                   child: const Text("Ajouter"),  
                 ),
               ],
@@ -282,7 +282,7 @@ class _MarketPageState extends State<MarketPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green.shade700,
+        backgroundColor: const Color(0xFF60A917),
         elevation: 2,
         title: const Text(
           "AgriShop 🌱",

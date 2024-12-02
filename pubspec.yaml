@@ -69,6 +69,9 @@ flutter:
   assets:
       - assets/images/champs.jpg
       - assets/images/logo.png
+      - assets/images/tomate.jpg
+      - assets/images/manioc.jpg
+      - assets/images/carotte.jpg
       
 
   # The following line ensures that the Material Icons font is

@@ -75,7 +75,7 @@ Future<void> _fetchWeatherData() async {
                               _buildWeatherForecastSection(),
                               const SizedBox(height: 16),
                               Center(child:Text(style:TextStyle(
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight:FontWeight.bold
                               ),
                               'Prévisions')),

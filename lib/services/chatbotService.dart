@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ChatbotService {
-  final String apiUrl='https://4299-41-82-207-174.ngrok-free.app/webhooks/rest/webhook';
+  final String apiUrl='https://a334-41-82-207-174.ngrok-free.app/webhooks/rest/webhook';
 
   // Constructeur pour initialiser l'URL de l'API
 

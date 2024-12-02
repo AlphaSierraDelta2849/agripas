@@ -51,7 +51,7 @@ class HeaderWidget extends StatelessWidget {
               const Divider(),
               if (user != null)
                 ListTile(
-                  leading: const Icon(Icons.person, color: Colors.green),
+                  leading: const Icon(Icons.person, color: const Color(0xFF60A917)),
                   title: Text(user.displayName ?? "Nom d'utilisateur"),
                   subtitle: Text(user.email ?? "Email non disponible"),
                 ),
