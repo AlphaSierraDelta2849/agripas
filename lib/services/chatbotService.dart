@@ -17,7 +17,13 @@ class ChatbotService {
       if (response.statusCode == 200) {
         // Parse et renvoie la réponse du chatbot
         final responseData = jsonDecode(response.body);
-        return responseData[0]['text'] ?? "Aucune réponse reçue.";
+        String text = '';
+        for (var response in responseData){
+          print('response: ' + response['text']);
+          text += response['text'];
+        }
+
+        return text ?? "Aucune réponse reçue.";
       } else {
         return "Erreur serveur : ${response.statusCode}.";
       }
