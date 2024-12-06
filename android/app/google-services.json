@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:903050467548:android:2cc631edec0c62c87afc19",
+        "android_client_info": {
+          "package_name": "com.agripas.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLrSywNvM2zeG1pSKw65w6ToYSSpCWll8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:903050467548:android:f689b9eaab0fffd67afc19",
         "android_client_info": {
           "package_name": "com.agripas.application"
